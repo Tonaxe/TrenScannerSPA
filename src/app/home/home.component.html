@@ -1,0 +1,26 @@
+<div class="home-form-container">
+  <h2>Formulario de Búsqueda de Viaje</h2>
+  <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="origen">Origen:</label>
+      <input id="origen" formControlName="origen" type="text" />
+    </div>
+    <div>
+      <label for="destino">Destino:</label>
+      <input id="destino" formControlName="destino" type="text" />
+    </div>
+    <div>
+      <label for="fechaIda">Fecha de Ida:</label>
+      <input id="fechaIda" formControlName="fechaIda" type="date" />
+    </div>
+    <div>
+      <label for="fechaVuelta">Fecha de Vuelta:</label>
+      <input id="fechaVuelta" formControlName="fechaVuelta" type="date" />
+    </div>
+    <div>
+      <label for="pasajeros">Número de Pasajeros:</label>
+      <input id="pasajeros" formControlName="pasajeros" type="number" />
+    </div>
+    <button type="submit" [disabled]="homeForm.invalid">Buscar Viaje</button>
+  </form>
+</div>
