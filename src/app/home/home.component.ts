@@ -33,7 +33,14 @@ import { FlightData } from '../models/flydata.model';
         fechaVuelta: this.homeForm.value.fechaVuelta,
         pasajeros: this.homeForm.value.pasajeros
       };
+
+      console.log(flightData);
       
-      this.apiService.getTrainsOfers(flightData);
+      this.apiService.getTrainsOfers(flightData).subscribe(
+        (res) => {
+        },
+        (error) => {
+        }
+      );
     }
   }

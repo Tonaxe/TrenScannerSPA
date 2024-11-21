@@ -7,11 +7,11 @@ import { FlightData } from '../models/flydata.model';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'https://api.example.com';
+  private baseUrl = 'http://localhost:5071/';
 
   constructor(private http: HttpClient) {}
 
   getTrainsOfers(flightData: FlightData): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${flightData}`);
+    return this.http.post(`${this.baseUrl}api/flightData`, flightData);
   }
 }
