@@ -3,11 +3,11 @@
   <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="origen">Origen:</label>
-      <input id="origen" formControlName="origen" type="text" />
+      <input id="origen" formControlName="origen" type="text" placeholder="Ej: Madrid" />
     </div>
     <div>
       <label for="destino">Destino:</label>
-      <input id="destino" formControlName="destino" type="text" />
+      <input id="destino" formControlName="destino" type="text" placeholder="Ej: Barcelona" />
     </div>
     <div>
       <label for="fechaIda">Fecha de Ida:</label>
@@ -19,7 +19,7 @@
     </div>
     <div>
       <label for="pasajeros">Número de Pasajeros:</label>
-      <input id="pasajeros" formControlName="pasajeros" type="number" />
+      <input id="pasajeros" formControlName="pasajeros" type="number" placeholder="1" min="1" />
     </div>
     <button type="submit" [disabled]="homeForm.invalid">Buscar Viaje</button>
   </form>
