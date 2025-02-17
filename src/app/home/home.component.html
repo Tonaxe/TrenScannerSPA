@@ -1,26 +1,34 @@
-<div class="home-form-container">
-  <h2>Formulario de Búsqueda de Viaje</h2>
-  <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="origen">Origen:</label>
-      <input id="origen" formControlName="origen" type="text" placeholder="Ej: Madrid" />
-    </div>
-    <div>
-      <label for="destino">Destino:</label>
-      <input id="destino" formControlName="destino" type="text" placeholder="Ej: Barcelona" />
-    </div>
-    <div>
-      <label for="fechaIda">Fecha de Ida:</label>
-      <input id="fechaIda" formControlName="fechaIda" type="date" />
-    </div>
-    <div>
-      <label for="fechaVuelta">Fecha de Vuelta:</label>
-      <input id="fechaVuelta" formControlName="fechaVuelta" type="date" />
-    </div>
-    <div>
-      <label for="pasajeros">Número de Pasajeros:</label>
-      <input id="pasajeros" formControlName="pasajeros" type="number" placeholder="1" min="1" />
-    </div>
-    <button type="submit" [disabled]="homeForm.invalid">Buscar Viaje</button>
-  </form>
-</div>
+  <div class="home-form-container">
+    <h2>Formulario de Búsqueda de Viaje</h2>
+    <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="origin">Origen:</label>
+        <input id="origin" formControlName="origin" type="text" placeholder="Ej: Madrid" />
+      </div>
+      <div>
+        <label for="destination">Destino:</label>
+        <input id="destination" formControlName="destination" type="text" placeholder="Ej: Barcelona" />
+      </div>
+      <div>
+        <label for="departureDate">Fecha de Ida:</label>
+        <input id="departureDate" formControlName="departureDate" type="date" />
+      </div>
+      <div>
+        <label for="returnDate">Fecha de Vuelta:</label>
+        <input id="returnDate" formControlName="returnDate" type="date" />
+      </div>
+      <div>
+        <label for="adults">Número de adultos:</label>
+        <input id="adults" formControlName="adults" type="number" placeholder="1" min="1" />
+      </div>
+      <div>
+        <label for="children">Número de niños:</label>
+        <input id="children" formControlName="children" type="number" placeholder="0" min="0" />
+      </div>
+      <div>
+        <label for="infants">Número de bebes:</label>
+        <input id="infants" formControlName="infants" type="number" placeholder="0" min="0" />
+      </div>
+      <button type="submit" [disabled]="homeForm.invalid">Buscar Viaje</button>
+    </form>
+  </div>

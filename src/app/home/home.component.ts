@@ -14,11 +14,13 @@ import { FlightData } from '../models/flydata.model';
 
     constructor(private fb: FormBuilder, private apiService: ApiService) {
       this.homeForm = this.fb.group({
-        origen: ['', Validators.required],
-        destino: ['', Validators.required],
-        fechaIda: ['', Validators.required],
-        fechaVuelta: ['', Validators.required],
-        pasajeros: [1, [Validators.required, Validators.min(1)]],
+        origin: ['', Validators.required],
+        destination: ['', Validators.required],
+        departureDate: ['', Validators.required],
+        returnDate: ['', Validators.required],
+        adults: [1, [Validators.required, Validators.min(1)]],
+        children: [0, [Validators.required, Validators.min(0)]],
+        infants: [0, [Validators.required, Validators.min(0)]],
       });
     }
 
@@ -27,11 +29,13 @@ import { FlightData } from '../models/flydata.model';
     onSubmit(): void {
       
       const flightData: FlightData = {
-        origen: this.homeForm.value.origen,
-        destino: this.homeForm.value.destino,
-        fechaIda: this.homeForm.value.fechaIda,
-        fechaVuelta: this.homeForm.value.fechaVuelta,
-        pasajeros: this.homeForm.value.pasajeros
+        origin: this.homeForm.value.origin,
+        destination: this.homeForm.value.destination,
+        departureDate: this.homeForm.value.departureDate.split('-')[2],
+        returnDate: this.homeForm.value.returnDate.split('-')[2],
+        adults: this.homeForm.value.adults,
+        children: this.homeForm.value.children,
+        infants: this.homeForm.value.infants
       };
 
       console.log(flightData);

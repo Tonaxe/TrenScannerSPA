@@ -7,7 +7,7 @@ import { FlightData } from '../models/flydata.model';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:5071/';
+  private baseUrl = 'https://localhost:44355/';
 
   constructor(private http: HttpClient) {}
 
